@@ -2,9 +2,9 @@
 
 🧭 Overview
 
-This project challenges the traditional economic paradigm by exploring the relationship between National Wellbeing (Happiness Score) and Economic Resilience/Performance (GDP, Innovation) across various countries.
+This project challenges the traditional economic paradigm by exploring the relationship between National Wellbeing (Happiness Score), Innovation (Innovation score) and Economic erformance (GDP) across various countries.
 
-The central hypothesis is that high national wellbeing acts as economic infrastructure, driving higher productivity and innovation, rather than being merely a result of economic success. We built a relational SQL database from four complementary datasets, performed advanced querying to extract correlations, and used Python for robust data cleaning and visualization.
+The central hypothesis is that ations with superior scores in overall Happiness demonstrate proportionally higher scores in Innovation, suggesting that a thriving environment of well-being, trust, and social support acts as a more powerful catalyst for creative output than economic metrics alone. Simply put: Happier nations are fundamentally more innovative nations.
 
 🎯 Project Objectives
 
@@ -22,45 +22,14 @@ Visualization: Use Python to generate clear visualizations that support the core
 
 Four key datasets were used to build a comprehensive analytical structure. Each was individually cleaned and normalized before integration.
 
-Dataset
+happiness_score --> Measures the level of national happiness and social support based on global surveys.
 
-Description
+innovation_score -- >Tracks national innovation performance through global indices.
 
-Source
+gdp --> Represents each country’s total economic output (Gross Domestic Product).
 
-Study Focus
+gdp_per_capita --> GDP adjusted by population, providing a per-person measure of economic wealth.
 
-happiness_score
-
-Measures the level of national happiness and social support based on global surveys.
-
-World Happiness Report
-
-Primary Predictive Variable (Wellbeing)
-
-innovation_score
-
-Tracks national innovation performance through global indices.
-
-External Sources
-
-Proxy for Innovation & Productivity
-
-gdp
-
-Represents each country’s total economic output (Gross Domestic Product).
-
-External Sources
-
-Primary Economic Indicator
-
-gdp_per_capita
-
-GDP adjusted by population, providing a per-person measure of economic wealth.
-
-External Sources
-
-Indicator of Individual Productivity
 
 🧱 Database Design
 
@@ -68,65 +37,8 @@ Indicator of Individual Productivity
 
 ![alt text](erd.png)
 
-The database, named happiness_data, contains four main tables linked by the common key: country.
+The database, named happiness_data, contains four main tables linked by the common key: country and code.
 
-Table
-
-Primary Key
-
-Foreign Keys
-
-Description
-
-happiness_score
-
-country
-
-—
-
-Contains all social and wellbeing metrics.
-
-innovation_score
-
-country
-
-—
-
-Contains global innovation scores and R&D data.
-
-gdp
-
-country
-
-—
-
-Total GDP data per country over time.
-
-gdp_per_capita
-
-country
-
-—
-
-GDP per capita for individual economic comparison.
-
-⚙️ Technologies Used
-
-Category
-
-Tools
-
-Database
-
-MySQL
-
-Data Processing & Visualization
-
-Python (pandas, matplotlib, seaborn)
-
-Documentation & Version Control
-
-Markdown, Git & GitHub
 
 🔄 Project Workflow
 
@@ -140,7 +52,7 @@ Used Python (Pandas) to clean and prepare them: handling missing values, standar
 
 Designed the database schema (happiness_data).
 
-Used the create_happiness_database.sql script to build the structure in MySQL.
+Used the happiness_data.sql script to build the structure in MySQL.
 
 Loaded the cleaned datasets into the corresponding tables.
 
@@ -148,62 +60,40 @@ Loaded the cleaned datasets into the corresponding tables.
 
 Wrote and executed multi-join SQL queries to:
 
-Explore correlations between social support and GDP growth.
+Join all datasets. to combine and unify tables. In coding, this uses JOIN (e.g., INNER, LEFT) or UNION (to stack them).
+Order by metrics to identify the leaders. This uses the ORDER BY clause (often with DESC for descending).
+Filter by year. This uses the WHERE clause.
+Calculate means by year and use create views. This involves GROUP BY Year for the calculation, followed by CREATE VIEW.
+Calculate means, maximums, and minimums by country. This requires a separate aggregation using GROUP BY Country.
 
-Identify countries that maintain high wellbeing despite moderate GDP (outliers).
-
-Compare the predictive strength of Happiness Score vs. GDP on Innovation Score.
-
-All analytical queries are contained in queries_happiness_data.sql.
+All analytical queries are contained in queries_happiness.sql.
 
 4️⃣ Visualization with Python
 
-Used Python to calculate final descriptive statistics (e.g., Pearson correlation coefficients).
+Used Python to calculate final descriptive statistics.
 
 Created visualizations (Scatter Plots, Correlation Heatmaps, Bar Charts) to illustrate the hypothesis that wellbeing precedes economic growth.
 
-📊 Key Insights (Example Summaries)
+📊 Key Insights 
 
-(Please fill in these points with your final, confirmed findings from your analysis.)
-
-Wellbeing Correlates with Innovation: Countries ranking high in Social Support and Freedom tend to show a disproportionately high Innovation Score, even when controlling for baseline GDP.
-
-Resilience Factor: Regions with strong Trust (Corruption Perception) showed greater economic resilience (less volatility) during global shocks compared to regions reliant solely on high GDP.
-
-The Predictive Lead: Statistical modeling suggests that a 1-point increase in the Happiness Score can predict a noticeable rise in the GDP per Capita growth rate in the subsequent 2-3 years.
+The analysis of rank correlation reveals that achieving top-tier Innovation is not solely a function of financial might but is highly dependent on a nation's Well-being factors.While GDP per capita holds the strongest direct link to Innovation (0.67), the connection between Happiness and Innovation (0.51) is surprisingly robust. This correlation of $0.51$ suggests that a nation's collective well-being—which incorporates elements like social support, healthy life expectancy, and trust—is nearly as important as a strong economy when it comes to predicting innovation leadership.In short:Innovation requires both: A nation needs the resources (GDP) to fund research and development, and the right environment (Happiness/Trust/Health) to foster creativity and risk-taking.The Interconnection is Key: The high positive correlations across all three metrics demonstrate that success is holistic. Top-ranked nations have figured out the synergy: they use their wealth to secure the foundational well-being (health, social trust) that, in turn, fuels their capacity for innovation. Innovation is not just driven by dollars; it's driven by the citizens who are healthy, supported, and happy enough to invent the future.
 
 
 👥 Team
 
-Member
+António Gouveia & Sofia Scomazzon
 
-Role
+📦 Deliverables 
 
-Responsibilities
+✅ MySQL Database Schema — sql/happiness_data.sql
 
-[Nome do Autor 1]
-
-Database Design & SQL Analysis
-
-Criação da base de dados, queries SQL complexas e garantia de integridade dos dados.
-
-[Nome do Autor 2]
-
-Python Visualization & Cleaning
-
-Pré-processamento de dados, análise estatística e geração de gráficos.
-
-📦 Deliverables (Entregáveis)
-
-✅ MySQL Database Schema — sql/create_happiness_database.sql
-
-✅ SQL Queries File — sql/queries_happiness_data.sql
+✅ SQL Queries File — sql/queries_happiness.sql
 
 ✅ Python Script — python/data_cleaning_and_visuals.py
 
-✅ ERD Diagram (Image) — sql/erd.png
+✅ ERD Diagram (Image) — sql/erd.png & model.mwb.bak
 
-✅ Final Presentation Slides — presentation/final_presentation.pptx (ou link externo)
+✅ Final Presentation Slides
 
 📁 Repository Structure
 
