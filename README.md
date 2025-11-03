@@ -6,6 +6,7 @@ This project challenges the traditional economic paradigm by exploring the relat
 
 The central hypothesis is that ations with superior scores in overall Happiness demonstrate proportionally higher scores in Innovation, suggesting that a thriving environment of well-being, trust, and social support acts as a more powerful catalyst for creative output than economic metrics alone. Simply put: Happier nations are fundamentally more innovative nations.
 
+
 🎯 Project Objectives
 
 Model Wellbeing: Establish National Happiness and as key predictors of innovation.
@@ -17,6 +18,7 @@ Data Consistency: Perform meticulous data cleaning and transformation (Python) t
 Insight Extraction: Execute sophisticated SQL queries to extract meaningful insights about the correlations between wellbeing, innovation, and economic performance.
 
 Visualization: Use Python to generate clear visualizations that support the core hypothesis.
+
 
 🧩 Datasets Used
 
@@ -48,6 +50,7 @@ Collected the four datasets (.csv).
 
 Used Python (Pandas) to clean and prepare them: handling missing values, standardizing country names, and normalizing column formats.
 
+
 2️⃣ Database Creation
 
 Designed the database schema (happiness_data).
@@ -55,6 +58,7 @@ Designed the database schema (happiness_data).
 Used the happiness_data.sql script to build the structure in MySQL.
 
 Loaded the cleaned datasets into the corresponding tables.
+
 
 3️⃣ SQL Queries & Analysis
 
@@ -68,11 +72,13 @@ Calculate means, maximums, and minimums by country. This requires a separate agg
 
 All analytical queries are contained in queries_happiness.sql.
 
+
 4️⃣ Visualization with Python
 
 Used Python to calculate final descriptive statistics.
 
 Created visualizations (Scatter Plots, Correlation Heatmaps, Bar Charts) to illustrate the hypothesis that wellbeing precedes economic growth.
+
 
 📊 Key Insights 
 
@@ -82,6 +88,7 @@ The analysis of rank correlation reveals that achieving top-tier Innovation is n
 👥 Team
 
 António Gouveia & Sofia Scomazzon
+
 
 📦 Deliverables 
 
@@ -94,6 +101,7 @@ António Gouveia & Sofia Scomazzon
 ✅ ERD Diagram (Image) — sql/erd.png & model.mwb.bak
 
 ✅ Final Presentation Slides
+
 
 📁 Repository Structure
 
