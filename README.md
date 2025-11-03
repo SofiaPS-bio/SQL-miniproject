@@ -207,20 +207,4 @@ Pré-processamento de dados, análise estatística e geração de gráficos.
 
 📁 Repository Structure
 
-SQL-miniproject/
-│
-├── data/                         
-│   ├── (raw and cleaned CSV files)
-│
-├── sql/
-│   ├── create_happiness_database.sql   # Database schema creation 
-│   ├── queries_happiness_data.sql      # Analytical SQL queries
-│   ├── erd.png                         # Diagrama de Relacionamento de Entidades
-│
-├── python/
-│   ├── data_cleaning_and_visuals.py    # Data cleaning & visualization script 
-│
-├── presentation/
-│   ├── final_presentation.pptx         # Slides de apresentação final
-│
-└── README.md                           # Project documentation
+SQL-miniproject/ ├── raw/                         # Cleaned CSV files ├── sql/                         # SQL scripts │   ├── create_happiness_database.sql │   ├── queries_happiness_data.sql │   └── diagram.sql ├── python/                      # Python script for data cleaning and visualization │   └── data_cleaning_and_visuals.py ├── presentation/                # Final presentation slides │   └── final_presentation.pptx └── README.md                    # Project documentation
